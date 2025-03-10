@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: install deps 
-        run: npm install @vscode/vsce
+        run: npm install -g @vscode/vsce
       - name: Package VS Code extension
         id: package
         uses: nhedger/package-vscode-extension@v1
