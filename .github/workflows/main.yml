@@ -1,0 +1,22 @@
+on:
+  push:
+    branches: 
+      - main
+    paths-ignore: # dont run when changes made to these folders 
+      - '.vscode/**'
+jobs:
+  build-vsix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Package VS Code extension
+        id: package
+        uses: nhedger/package-vscode-extension@v1
+      
+      - name: Publish VS Code extension artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: my-extension
+            path: ${{ steps.package.outputs.packagePath }}
