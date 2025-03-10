@@ -2,6 +2,10 @@
   "name": "injected-erb",
   "displayName": "Injected-ERB",
   "description": "This adds support for injecting ERB into type of document.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skyejonke/injected-erb.git"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
