@@ -1,0 +1,35 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.injected.erb",
+	"injectionSelector": "L:",
+	"patterns": [
+		{
+		  "name": "comment.block.erb",
+		  "begin": "<%#",
+		  "end": "%>",
+		  "contentName": "comment.block.erb"
+		},
+	  {
+		"name": "meta.embedded.erb",
+		"begin": "\\s*(<%[=-]?)",
+		"beginCaptures": {
+		  "1": {
+			"name": "punctuation.section.embedded.begin.erb"
+		  }
+		},
+		"end": "-?%>",
+		"contentName": "meta.embedded.block.ruby",
+		"patterns": [
+		  {
+			"include": "source.ruby"
+		  }
+		],
+		"endCaptures": {
+		  "0": {
+			"name": "punctuation.section.embedded.end.erb"
+		  }
+		}
+	  }
+	]
+  }
+  

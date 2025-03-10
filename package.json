@@ -1,0 +1,33 @@
+{
+  "name": "injected-erb",
+  "displayName": "Injected-ERB",
+  "description": "This adds support for injecting ERB into type of document.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "source.injected.erb",
+        "path": "./syntaxes/injected.erb.tmLanguage.json",
+        "injectTo": [
+          "source",
+          "text"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.ruby": "ruby"
+        },
+        "tokenTypes": {
+          "meta.embedded.block.ruby": "other"
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.2.2"
+  }
+}
